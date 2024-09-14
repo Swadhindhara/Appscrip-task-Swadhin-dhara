@@ -64,10 +64,12 @@ export default function Home() {
   const [mobileFilter, setMobileFilter] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setMobileFilter(true)
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth <= 768) {
+        setMobileFilter(true);
+      }
     }
-  }, [window.innerWidth])
+  }, []);
 
   const [mobileFilterPop, setMobileFilterPop] = useState(false)
 
